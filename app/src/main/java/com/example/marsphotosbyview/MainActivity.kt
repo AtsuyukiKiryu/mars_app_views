@@ -14,7 +14,6 @@ import com.example.simplegrid.adapter.ImageAdapter
 class MainActivity : AppCompatActivity() {
 
     private lateinit var recyclerView: RecyclerView
-    private lateinit var imageAdapter: ImageAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,11 +27,27 @@ class MainActivity : AppCompatActivity() {
 
 
 //        // ImageViewを取得
-//        val imageView: ImageView = findViewById(R.id.imageView)
+//        val imageView: ImageView = findViewById(R.id.imageView2)
 //
 //        // Glideを使用して画像をロード
-//        val imageUrl = "https://ccsrpcml.carsensor.net/CSphoto/ml/026/842/UZ0047026842/UZ0047026842_13_001.jpg"
+        val imageUrl = "https://ccsrpcml.carsensor.net/CSphoto/ml/026/842/UZ0047026842/UZ0047026842_13_001.jpg"
 //        Glide.with(this).load(imageUrl).into(imageView)
+
+
+//
+//        val testImageView = findViewById<ImageView>(R.id.testImageView)
+//        Glide.with(this)
+//            .load(imageUrl) // テスト用の画像URL
+//            .into(testImageView)
+
+
+// テキストデータのリストを作成
+//        val items = List(20) { "Item #$it" } // "Item #0", "Item #1", ...
+//
+//        recyclerView = findViewById(R.id.recyclerView)
+//        recyclerView.layoutManager = GridLayoutManager(this, 2)
+//        recyclerView.adapter = TextAdapter(items)
+
 
 //         URLリストを作成
         val imageUrls = listOf(
@@ -42,13 +57,10 @@ class MainActivity : AppCompatActivity() {
             "https://ccsrpcml.carsensor.net/CSphoto/ml/026/842/UZ0047026842/UZ0047026842_13_001.jpg",
         )
 
-        val recyclerView: RecyclerView = findViewById(R.id.recyclerView)
+//        val recyclerView: RecyclerView =
+        recyclerView =    findViewById(R.id.recyclerView)
         recyclerView.layoutManager = GridLayoutManager(this, 2) // 2列のグリッド
         recyclerView.adapter = ImageAdapter(imageUrls)
 
-//        recyclerView = findViewById(R.id.recyclerView)
-//        recyclerView.layoutManager = GridLayoutManager(this, 2)
-//        imageAdapter = ImageAdapter(imageUrls)
-//        recyclerView.adapter = imageAdapter
     }
 }

@@ -4,9 +4,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.marsphotosbyview.R
+import jp.wasabeef.glide.transformations.RoundedCornersTransformation
 
 class ImageAdapter(private val imageUrls: List<String>) : RecyclerView.Adapter<ImageAdapter.ImageViewHolder>() {
 
@@ -21,8 +23,14 @@ class ImageAdapter(private val imageUrls: List<String>) : RecyclerView.Adapter<I
 
     override fun onBindViewHolder(holder: ImageViewHolder, position: Int) {
         val imageUrl = imageUrls[position]
-        Glide.with(holder.imageView.context).load(imageUrl).into(holder.imageView)
+//        Glide.with(holder.imageView.context).load(imageUrl).into(holder.imageView)
+        Glide.with(holder.imageView.context)
+            .load(imageUrl)
+            .transform(RoundedCornersTransformation(16, 0)) // 半径16dpで角を丸める
+            .into(holder.imageView)
     }
 
     override fun getItemCount(): Int = imageUrls.size
 }
+
+
