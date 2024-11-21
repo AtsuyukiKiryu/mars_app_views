@@ -10,7 +10,7 @@ import com.bumptech.glide.Glide
 import com.example.marsphotosbyview.R
 import jp.wasabeef.glide.transformations.RoundedCornersTransformation
 
-class ImageAdapter(private val imageUrls: List<String>) : RecyclerView.Adapter<ImageAdapter.ImageViewHolder>() {
+class ImageAdapter(private var imageUrls: List<String>) : RecyclerView.Adapter<ImageAdapter.ImageViewHolder>() {
 
     class ImageViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val imageView: ImageView = itemView.findViewById(R.id.imageView)
@@ -28,6 +28,11 @@ class ImageAdapter(private val imageUrls: List<String>) : RecyclerView.Adapter<I
             .load(imageUrl)
             .transform(RoundedCornersTransformation(16, 0)) // 半径16dpで角を丸める
             .into(holder.imageView)
+    }
+
+    fun updateImages(newImageUrls: List<String>) {
+        imageUrls = newImageUrls
+        notifyDataSetChanged()
     }
 
     override fun getItemCount(): Int = imageUrls.size

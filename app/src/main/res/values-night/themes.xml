@@ -4,4 +4,8 @@
         <!-- Customize your dark theme here. -->
         <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
     </style>
+    <style name="ThemeOverlay.MaterialComponents.ActionBar" parent="">
+        <item name="colorPrimary">@color/white</item> <!-- 背景色 -->
+        <item name="colorOnPrimary">@color/black</item> <!-- テキスト色 -->
+    </style>
 </resources>

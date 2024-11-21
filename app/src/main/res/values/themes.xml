@@ -5,5 +5,10 @@
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
     </style>
 
+    <!-- AppBar専用のスタイル -->
+    <style name="ThemeOverlay.MarsPhotos.ActionBar" parent="ThemeOverlay.Material3.ActionBar">
+        <item name="colorPrimary">@color/white</item> <!-- 背景色 -->
+        <item name="colorOnPrimary">@color/black</item> <!-- テキスト色 -->
+    </style>
     <style name="Theme.MarsPhotosByView" parent="Base.Theme.MarsPhotosByView" />
 </resources>
